@@ -19,7 +19,7 @@
     <div class="header">
       <div class="logo"></div>
       <div class="search">
-        <form action="result.html" method="get" id="search">
+        <form action="RestaurantReview.html" method="get" id="search">
           <input type="text" name="hotel" class="input" placeholder="" maxlength="200" id="headerBarSearch" />
           <input type="text" name="location" class="input" placeholder="" value="San Francisco" data-longgeoid="72057594043244994"maxlength="200" />
           <button class="submitButton" type="submit">
@@ -29,17 +29,17 @@
         </form>
       </div>
     </div>
-    <div class="row col-lg-12 " id="resultsContainer" style="margin:0 !important">
-      <div class="col-md-3 innerTabs">
-        <div class="resultView" style="position: relative;">
+    <div class="row col-lg-12 " id="resultsContainer" style="margin:0 !important;">
+      <div class="col-md-3 displayList">
+        <div class="resultView innerTabs" style="position: relative;">
           <ul class="searchList" id="results">
 
 
           </ul>
         </div>
       </div>
-      <div class="col-md-9" style="position:relative;">
-        <div id="map" style="width:966px;height:593px"></div>
+      <div class="col-md-9" style="position:relative;margin:0 !important">
+        <div id="map" class="displayMap"></div>
       </div>
       <!-- <div class="col-md-4" style="position:fixed !important;"></div> -->
     </div>

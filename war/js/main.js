@@ -1,20 +1,5 @@
 
 $(document).ready(function(){
-	var selectedTab =0;
-	var allLi_selection = $('#selectionContent ul li');
-	$('#selectionContent ul li').on("click",function(){
-		allLi_selection.removeClass("check");
-		$(this).addClass("check");
-		selectedTab = $('#selectionContent ul li.check').index();
-		changeImage(selectedTab);
-		changeContext(selectedTab)
-		var myfile = $(this).attr("data-file");
-		plotBar(myfile,'#topfivesvg');
-		var myfile1 = $(this).attr("data-file1");
-		plotNetwork(myfile1,"#networksvg");
-		$("#displayLine").html("");
-		$("#displayMembers").html("");
-	})
 	getResults();
 });
 
@@ -28,16 +13,27 @@ function myMap() {
   marker.setMap(map);
 }
 
+function makeUrl() {
+	var queryString = decodeURIComponent(window.location.search);
+	queryString = queryString.substring(1);
+  return "/search?" + queryString;
+}
+
+function doAjax(_url) {
+  return $.ajax({
+    url: _url,
+    type: 'GET'
+  });
+}
+
 function getResults() {
 	var queryString = decodeURIComponent(window.location.search);
 	queryString = queryString.substring(1);
 	var queries = queryString.split("&");
-	for (var i = 0; i < queries.length; i++)
-	{
-	  // document.write(queries[i] + "<br>");
-	}
 	var res=queries[0].split("=");
-	for (i = 0; i <5; i++) {
+	var hotel=res[1];
+	doAjax(makeUrl())
+	for (i = 0; i <20; i++) {
 		$('#results').append(
 	    $('<li>').append(
 	        $('<div>').attr('class','contentHolder')
