@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ccproject2.service.NlpService;
 import com.ccproject2.service.YelpService;
 
 //import com.google.appengine.repackaged.com.google.gson.Gson;
@@ -24,11 +25,14 @@ public class Servelet extends HttpServlet {
 		// System.out.println(action);
 		String hotel = "north-india-restaurant-san-francisco";
 		YelpService yelp = new YelpService();
+		NlpService nlp=new NlpService();
 
 		// Print result of yelp API
 		com.google.appengine.repackaged.com.google.gson.Gson gson = new com.google.appengine.repackaged.com.google.gson.Gson();
 		System.out.print(gson.toJson(yelp.searchRestaurant(hotel)));
 		System.out.print(gson.toJson(yelp.getReviews(hotel)));
+		// Print result of NLP API
+		System.out.print(gson.toJson(nlp.analyzeSentimentText("Enjoy your vacation!")));
 
 	}
 }

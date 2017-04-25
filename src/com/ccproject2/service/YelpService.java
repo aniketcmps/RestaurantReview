@@ -17,8 +17,9 @@ public class YelpService {
 	private static final String SEARCH_URL = "businesses/search";
 	private static final String SEARCH_BUSINESS = "businesses/";
 	private static final String REVIEWS_URL = "/reviews";
+	private static final String KEY = "Bearer Qq4n0uf_IeDA6eSCuDg0JQawSMoFkCZDDM4LfTIq_pIomQl9mOayqypTYkxjvBP2gUCUjQ8VY_MWmUBY5fQK2DtUL5E6KE6FECrrt0h_sLncArZNhJv6Y3Y2E3_1WHYx";
 	private HttpURLConnection conn;
-	com.google.appengine.repackaged.com.google.gson.Gson gson = new com.google.appengine.repackaged.com.google.gson.Gson();
+	private com.google.appengine.repackaged.com.google.gson.Gson gson = new com.google.appengine.repackaged.com.google.gson.Gson();
 
 	public Business searchRestaurant(String name) {
 		Business business = null;
@@ -27,8 +28,7 @@ public class YelpService {
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Content-Type", "application/json");
-			conn.setRequestProperty("Authorization",
-					"Bearer Qq4n0uf_IeDA6eSCuDg0JQawSMoFkCZDDM4LfTIq_pIomQl9mOayqypTYkxjvBP2gUCUjQ8VY_MWmUBY5fQK2DtUL5E6KE6FECrrt0h_sLncArZNhJv6Y3Y2E3_1WHYx");
+			conn.setRequestProperty("Authorization", KEY);
 			if (conn.getResponseCode() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
 			}
@@ -59,8 +59,7 @@ public class YelpService {
 			conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Content-Type", "application/json");
-			conn.setRequestProperty("Authorization",
-					"Bearer Qq4n0uf_IeDA6eSCuDg0JQawSMoFkCZDDM4LfTIq_pIomQl9mOayqypTYkxjvBP2gUCUjQ8VY_MWmUBY5fQK2DtUL5E6KE6FECrrt0h_sLncArZNhJv6Y3Y2E3_1WHYx");
+			conn.setRequestProperty("Authorization", KEY);
 			if (conn.getResponseCode() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
 			}
