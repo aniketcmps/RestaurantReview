@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ccproject2.service.YelpService;
+
 //import com.google.appengine.repackaged.com.google.gson.Gson;
 
 @SuppressWarnings("serial")
@@ -21,7 +23,7 @@ public class Servelet extends HttpServlet {
 		String action = req.getParameter("hotel");
 		// System.out.println(action);
 		String hotel = "north-india-restaurant-san-francisco";
-		YelpApis yelp = new YelpApis();
+		YelpService yelp = new YelpService();
 
 		// Print result of yelp API
 		com.google.appengine.repackaged.com.google.gson.Gson gson = new com.google.appengine.repackaged.com.google.gson.Gson();

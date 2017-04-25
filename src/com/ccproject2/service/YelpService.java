@@ -1,4 +1,4 @@
-package com.ccproject2;
+package com.ccproject2.service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import com.ccproject2.model.Reviews;
 //import com.google.appengine.repackaged.com.google.gson.Gson;
 //import com.google.appengine.repackaged.com.google.gson.reflect.TypeToken;
 
-public class YelpApis {
+public class YelpService {
 	private static final String BASE_URL = "https://api.yelp.com/v3/";
 	private static final String SEARCH_URL = "businesses/search";
 	private static final String SEARCH_BUSINESS = "businesses/";
